@@ -1,5 +1,5 @@
 import streamlit
-import pandas
+import pandas as pd
 import requests
 import snowflake.connector
 from urllib.error import URLError
@@ -33,7 +33,7 @@ else:
      streamlit.dataframe(fruityvice_normalized)
 
 except URLError as e:
-        streamlit.error()
+        streamlit.error('Error: {}'.format(e))
 
 streamlit.stop()
 
